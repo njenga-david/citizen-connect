@@ -1,0 +1,36 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name">Name:</label>
+    <input id="name" formControlName="name" type="text" />
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <input id="email" formControlName="email" type="email" />
+  </div>
+  <div>
+    <label for="password">Password:</label>
+    <input id="password" formControlName="password" type="password" />
+    <div *ngIf="registerForm.get('password')?.errors?.['required'] && registerForm.get('password')?.touched" class="text-danger">
+      Password is required
+    </div>
+  </div>
+  <div>
+    <label for="confirmPassword">Confirm Password:</label>
+    <input id="confirmPassword" formControlName="confirmPassword" type="password" />
+    <div *ngIf="registerForm.get('confirmPassword')?.errors?.['required'] && registerForm.get('confirmPassword')?.touched" class="text-danger">
+      Confirm Password is required
+    </div>
+    <div *ngIf="registerForm.errors?.['passwordMismatch'] && registerForm.get('confirmPassword')?.dirty" class="text-danger">
+      Passwords do not match
+    </div>
+  </div>
+  <div>
+    <label for="role">Role:</label>
+    <select id="role" formControlName="role">
+      <option value="citizen">Citizen</option>
+      <option value="admin">Admin</option>
+      <option value="government_official">Government Official</option>
+    </select>
+  </div>
+  <button type="submit" [disabled]="registerForm.invalid">Register</button>
+</form>

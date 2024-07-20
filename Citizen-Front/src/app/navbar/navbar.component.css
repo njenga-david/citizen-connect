@@ -1,0 +1,77 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  background-color: #333;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 10px;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0;
+}
+
+nav ul li a {
+  display: block;
+  padding: 14px 20px;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  background-color: #575757;
+}
+
+@media (max-width: 1200px) {
+  nav ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  nav ul {
+    grid-template-columns: 1fr;
+  }
+
+  nav ul li {
+    width: 100%;
+  }
+
+  nav ul li a {
+    text-align: left;
+    padding-left: 30px;
+  }
+}
+/* Example custom CSS */
+.navbar-nav {
+  margin-left: auto; /* Align menu items to the right */
+}
+
+.nav-item {
+  margin-right: 10px; /* Space between menu items */
+}
+
+@media (max-width: 768px) {
+  .navbar-nav {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+  }
+}

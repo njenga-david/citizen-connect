@@ -1,0 +1,26 @@
+<div>
+  <h2>Report Incident</h2>
+  <form #incidentForm="ngForm" (ngSubmit)="submitIncident(incidentForm)">
+    <div>
+      <label for="area">Area:</label>
+      <input type="text" id="area" name="area" [(ngModel)]="incident.area" required>
+    </div>
+    <div>
+      <label for="reportedBy">Reported By:</label>
+      <input type="text" id="reportedBy" name="reportedBy" [(ngModel)]="incident.reportedBy" required>
+    </div>
+    <div>
+      <label for="reportedDate">Reported Date:</label>
+      <input type="date" id="reportedDate" name="reportedDate" [(ngModel)]="incident.reportedDate" required>
+    </div>
+    <div>
+      <label for="attachment">Attach Picture/Video:</label>
+      <input type="file" id="attachment" name="attachment" (change)="onFileChange($event)" accept="image/*, video/*">
+    </div>
+    <div>
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" [(ngModel)]="incident.description" required></textarea>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+</div>

@@ -1,0 +1,79 @@
+/* Global reset and basic styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+  }
+  
+  .container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1, h2 {
+    color: #333;
+  }
+  
+  ul {
+    padding-left: 20px;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+  
+  /* Styling for the terms and conditions content */
+  .container h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .container p, .container ul {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+  
+  .container h2 {
+    font-size: 22px;
+    margin-top: 20px;
+  }
+  
+  .container ul li {
+    font-size: 16px;
+  }
+  
+  /* Additional styles */
+  .container p {
+    margin-bottom: 15px;
+  }
+  
+  .container ul {
+    margin-bottom: 20px;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .container {
+      padding: 15px;
+      width: 90%;
+    }
+    
+    .container h1 {
+      font-size: 24px;
+    }
+    
+    .container h2 {
+      font-size: 20px;
+    }
+    
+    .container p, .container ul {
+      font-size: 14px;
+    }
+  }
+  

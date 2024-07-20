@@ -1,0 +1,23 @@
+<div class="incident-list">
+  <div class="incident-container">
+    <div class="incident-card" *ngFor="let incident of incidents">
+      <div class="incident-image" *ngIf="incident.attachment">
+        <ng-container *ngIf="isImage(incident.attachment); else videoTemplate">
+          <img [src]="'' + incident.attachment" alt="Incident Image">
+        </ng-container>
+        <ng-template #videoTemplate>
+          <video width="320" height="240" controls>
+            <source [src]="'' + incident.attachment" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </ng-template>
+      </div>
+      <div class="incident-details">
+        <h3>Area: {{ incident.area }}</h3>
+        <p><strong>Reported By:</strong> {{ incident.reportedBy }}</p>
+        <p><strong>Reported Date:</strong> {{ incident.reportedDate | date:'mediumDate' }}</p>
+        <p><strong>Description:</strong> {{ incident.description }}</p>
+      </div>
+    </div>
+  </div>
+</div>

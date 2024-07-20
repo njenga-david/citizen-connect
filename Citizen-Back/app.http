@@ -1,0 +1,141 @@
+#### User Registration
+POST http://localhost:4000/auth/register
+Content-Type: application/json
+
+{
+    "userImg": "https://canva.com/content-partner/?utm_medium=partner&utm_source=pixabay&utm_campaign=retouch_in_canva_edit_image&image-url=https%3A//pixabay.com/get/gab20ff6610f2b24de7ab41116a15b6be0696ad5dc7d040c0055fb3bb4813223eb1268afca1cf7fad2c7cc143c3689ff7_1920.jpg%3Flonglived%3D&external-id=6780743&canva-media-id=",
+    "userName": "David njenga",
+    "userEmail": "chatgptfordavid@gmail.com",
+    "roleName": "Gov-Official",
+    "upassword":"Qwerty@123"
+}
+
+
+#### User Login
+POST http://localhost:4000/auth/login
+Content-Type: application/json
+
+{
+    
+    "userEmail": "njengadavid4@gmail.com",
+    "upassword": "Qwerty@123"
+}
+
+#### All Users
+GET http://localhost:4000/auth/users
+
+
+#### A User
+GET http://localhost:4000/auth/57353389-b7e1-43be-b83a-cff6e634f60d
+
+
+#### Delete Users
+DELETE  http://localhost:4000/auth/57353389-b7e1-43be-b83a-cff6e634f60d
+
+
+
+
+
+
+
+#### Adding a View
+POST http://localhost:4000/view
+Content-Type: application/json
+
+{
+    "userId": "860f47a5-8e6f-44d6-b06f-a41042653a4a",
+    "viewContent": "PROTESTS!"
+}
+
+#### All Views
+GET http://localhost:4000/view
+
+
+#### Single-View
+GET http://localhost:4000/view/4a10f160-5947-4812-8de2-7812df341cb4
+
+
+#### Deleting a View
+
+
+DELETE http://localhost:4000/view/4a10f160-5947-4812-8de2-7812df341cb4
+
+
+#### Updating a View
+PATCH http://localhost:4000/view/bd4359ad-6d1d-4475-b1a0-98c17db4a35d
+Content-Type: application/json
+
+{
+    "userId":"",
+    "viewContent": "Anguka Nayo"
+}
+
+
+
+
+#### Adding an Incident
+POST http://localhost:4000/incident
+Content-Type: application/json
+
+{
+    "userId": "ee310da2-0611-400a-b557-af1102cdcd97",
+    "incidentImg": "https://canva.com/content-partner/?utm_medium=partner&utm_source=pixabay&utm_campaign=retouch_in_canva_edit_image&image-url=https%3A//pixabay.com/get/gab20ff6610f2b24de7ab41116a15b6be0696ad5dc7d040c0055fb3bb4813223eb1268afca1cf7fad2c7cc143c3689ff7_1920.jpg%3Flonglived%3D&external-id=6780743&canva-media-id=",
+    "incidentDesc": "Riots"
+}
+
+#### All Incidents
+GET http://localhost:4000/incident
+
+
+###A single Incident
+GET http://localhost:4000/incident/c7aad8b0-d241-4a31-bb3e-9d8dd7426610
+
+
+####Update Incident
+PATCH http://localhost:4000/incident/c7aad8b0-d241-4a31-bb3e-9d8dd7426610
+Content-Type: application/json
+
+{
+    "userId": "ee310da2-0611-400a-b557-af1102cdcd97",
+    "incidentImg": "https://canva.com/content-partner/?utm_medium=partner&utm_source=pixabay&utm_campaign=retouch_in_canva_edit_image&image-url=https%3A//pixabay.com/get/gab20ff6610f2b24de7ab41116a15b6be0696ad5dc7d040c0055fb3bb4813223eb1268afca1cf7fad2c7cc143c3689ff7_1920.jpg%3Flonglived%3D&external-id=6780743&canva-media-id=",
+    "incidentDesc": "Several Casualties in todays protests"
+}
+
+
+#### Delete Incident
+DELETE http://localhost:4000/incident/c7aad8b0-d241-4a31-bb3e-9d8dd7426610
+
+
+
+
+
+###Adding a poll
+POST http://localhost:4000/poll
+Content-Type: application/json
+
+{
+    "userId": "",
+    "pollQuestion": "Whats your take on the latest protests?",
+    "pollOption": "'There should be no protests', 'The protests should continue'",
+    "pollStatus": "Active"
+}
+
+
+####All Polls
+GET http://localhost:4000/poll
+
+
+#### Single Poll
+GET http://localhost:4000/poll/c7aad8b0-d241-4a31-bb3e-9d8dd7426610
+
+
+####Update Poll
+PATCH http://localhost:4000/poll/c7aad8b0-d241-4a31-bb3e-9d8dd7426610
+Content-Type: application/json
+
+{
+    "userId": "ee310da2-0611-400a-b557-af1102cdcd97",
+    "pollQuestion": "https://canva.com/content-partner/?utm_medium=partner&utm_source=pixabay&utm_campaign=retouch_in_canva_edit_image&image-url=https%3A//pixabay.com/get/gab20ff6610f2b24de7ab41116a15b6be0696ad5dc7d040c0055fb3bb4813223eb1268afca1cf7fad2c7cc143c3689ff7_1920.jpg%3Flonglived%3D&external-id=6780743&canva-media-id=",
+    "pollOption": "Several Casualties in todays protests",
+    "pollStatus":""
+}

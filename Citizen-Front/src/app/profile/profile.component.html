@@ -1,0 +1,11 @@
+<div class="profile-container">
+    <div class="profile-header">
+      <img [src]="profileImageUrl" alt="Profile Image" class="profile-image">
+      <h2>{{ username }}</h2>
+    </div>
+    <div class="profile-actions">
+      <button (click)="editProfile()">Edit</button>
+      <button (click)="logout()">Logout</button>
+    </div>
+  </div>
+  

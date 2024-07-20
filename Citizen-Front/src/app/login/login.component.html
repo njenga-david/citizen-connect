@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="login-container">
+    <h2>Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div>
+        <input id="email" formControlName="email" type="email" placeholder="Enter your email" />
+        <div *ngIf="formControls['email'].invalid && (formControls['email'].dirty || formControls['email'].touched)" class="error">
+          <div *ngIf="formControls['email'].errors?.['required']">Email is required.</div>
+          <div *ngIf="formControls['email'].errors?.['email']">Enter a valid email.</div>
+        </div>
+      </div>
+
+      <div>
+        <input id="password" formControlName="password" type="password" placeholder="Enter your password" />
+        <div *ngIf="formControls['password'].invalid && (formControls['password'].dirty || formControls['password'].touched)" class="error">
+          <div *ngIf="formControls['password'].errors?.['required']">Password is required.</div>
+        </div>
+      </div>
+
+      <div>
+        <label>
+          <input type="checkbox" formControlName="terms" />
+          I accept the terms and privacy policy
+        </label>
+        <div *ngIf="formControls['terms'].invalid && (formControls['terms'].dirty || formControls['terms'].touched)" class="error">
+          <div *ngIf="formControls['terms'].errors?.['requiredTrue']">You must accept the terms and conditions.</div>
+        </div>
+      </div>
+
+      <button type="submit" [disabled]="loginForm.invalid">Log in</button>
+    </form>
+
+    <div class="links">
+      <a href="/forgot-password">Forgot password</a>
+      <span>Don't have an account? <a href="/register">Register</a></span>
+    </div>
+  </div>
+</div>

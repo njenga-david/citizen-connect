@@ -1,0 +1,27 @@
+<div class="container">
+  <h2 class="text-center">Polls</h2>
+
+  <!-- Displaying polls -->
+  <div *ngFor="let poll of polls; let i = index" class="card mb-3">
+    <div class="card-body">
+      <h3>{{ poll.question }}</h3>
+      <ul class="list-group">
+        <li *ngFor="let option of poll.options; let j = index" class="list-group-item">
+          <label class="form-check-label">
+            <input class="form-check-input" type="radio" name="poll{{ i }}" [checked]="poll.selectedOption === option.text" (change)="vote(i, j)">
+            {{ option.text }} (Votes: {{ option.votes }})
+          </label>
+        </li>
+      </ul>
+      <p *ngIf="poll.selectedOption" class="mt-2">Your choice: {{ poll.selectedOption }}</p>
+    </div>
+    <button class="btn btn-danger" (click)="deletePoll(i)">Delete Poll</button>
+  </div>
+
+  <!-- People Voted section -->
+  <div class="people-voted">
+    <p><strong>People Voted:</strong></p>
+    <p>Yes: {{ getVoteCount('Yes') }}</p>
+    <p>No: {{ getVoteCount('No') }}</p>
+  </div>
+</div>

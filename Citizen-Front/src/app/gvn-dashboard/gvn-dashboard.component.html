@@ -1,0 +1,21 @@
+<div class="main-container">
+    <div class="conversation">
+      <p>User: What Was the results of  the demonstrations in kasarani?</p>
+      <p>AI: The road blockage is being cleared and will be resolved soon.</p>
+      <button (click)="showChatBoard = true">Know More</button>
+    </div>
+    <div class="chat-board" *ngIf="showChatBoard">
+      <div class="chat-container">
+        <div class="chat-messages">
+          <div *ngFor="let message of chatMessages" class="chat-message">
+            <p>{{ message.sender }}: {{ message.text }}</p>
+          </div>
+        </div>
+        <div class="chat-input">
+          <input type="text" [(ngModel)]="userMessage" placeholder="Type Here...">
+          <button type="button" (click)="sendMessage()">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li *ngIf="isCitizen || isAdmin" class="nav-item">
+          <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
+        </li>
+        <li *ngIf="isGvn" class="nav-item">
+          <a class="nav-link" routerLink="/add-poll" routerLinkActive="active">Add Polls</a>
+        </li>
+        <li *ngIf="isGvn" class="nav-item">
+          <a class="nav-link" routerLink="/gvn-dashboard" routerLinkActive="active">Views Summary</a>
+        </li>
+        <li *ngIf="isGvn" class="nav-item">
+          <a class="nav-link" routerLink="/gvn-dashboard" routerLinkActive="active">Incident Summary</a>
+        </li>
+        <li *ngIf="isCitizen" class="nav-item">
+          <a class="nav-link" routerLink="/educate" routerLinkActive="active">Educate</a>
+        </li>
+        <li *ngIf="isCitizen || isAdmin" class="nav-item">
+          <a class="nav-link" routerLink="/report-incident" routerLinkActive="active">Report Incident</a>
+        </li>
+        <li *ngIf="isCitizen || isAdmin" class="nav-item">
+          <a class="nav-link" routerLink="/polls" routerLinkActive="active">Polls</a>
+        </li>
+        <li *ngIf="isCitizen" class="nav-item">
+          <a class="nav-link" routerLink="/ai-chat" routerLinkActive="active">AI Chat</a>
+        </li>
+        <li *ngIf="isCitizen || isAdmin" class="nav-item">
+          <a class="nav-link" routerLink="/display-incidents" routerLinkActive="active">Display Incidents</a>
+        </li>
+        <li *ngIf="isCitizen || isAdmin || isGvn" class="nav-item">
+          <a class="nav-link" routerLink="/profile" routerLinkActive="active">Profile</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

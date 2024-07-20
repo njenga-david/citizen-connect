@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url('../Assets/citizen-back.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.register-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.error {
+  color: red;
+  font-size: 0.8em;
+}
+
+button {
+  margin-top: 10px;
+}
+
+h2 {
+  text-align: center;
+}
